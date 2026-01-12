@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Learning - Cours d'Intelligence Artificielle & Informatique</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Externe -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" data-page="home">
+                    <div class="logo-icon">DL</div>
+                    <div class="logo-text">Digital Learning</div>
+                </a>
+
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="#" class="nav-link active" data-page="home">Accueil</a></li>
+                        <li><a href="#" class="nav-link" data-page="courses">Cours</a></li>
+                        <li><a href="#" class="nav-link" data-page="categories">Catégories</a></li>
+                        <li><a href="#" class="nav-link" data-page="admin">Enseigner</a></li>
+                        <li><a href="#" class="nav-link" data-page="dashboard">Tableau de bord</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">À propos</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="user-menu" id="user-menu">
+                        <button class="btn btn-outline" id="login-btn">Connexion</button>
+                        <button class="btn btn-primary" id="register-btn">S'inscrire</button>
+                    </div>
+
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pages -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>Maîtrisez l'IA et l'Informatique</h1>
+                        <p>Découvrez nos cours experts en intelligence artificielle, développement, data science et cybersécurité. Apprenez avec des professionnels du secteur.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-light" onclick="showPage('courses')">Explorer les cours</button>
+                            <button class="btn btn-outline" style="color: white; border-color: white;">Commencer gratuitement</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <div class="categories">
+                <div class="container">
+                    <h2 class="section-title">Domaines d'Expertise</h2>
+                    <p class="section-subtitle">Choisissez votre parcours parmi nos spécialités en informatique et intelligence artificielle</p>
+                    <div class="categories-grid">
+                        <div class="category-card ai" onclick="showPage('courses')">
+                            <div class="category-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="category-title">Intelligence Artificielle</h3>
+                            <p class="category-count">24 cours disponibles</p>
+                        </div>
+                        <div class="category-card dev" onclick="showPage('courses')">
+                            <div class="category-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="category-title">Développement</h3>
+                            <p class="category-count">18 cours disponibles</p>
+                        </div>
+                        <div class="category-card data" onclick="showPage('courses')">
+                            <div class="category-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3 class="category-title">Data Science</h3>
+                            <p class="category-count">15 cours disponibles</p>
+                        </div>
+                        <div class="category-card cyber" onclick="showPage('courses')">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="category-title">Cybersécurité</h3>
+                            <p class="category-count">12 cours disponibles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">10K+</div>
+                            <div class="stat-label">Étudiants actifs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">150+</div>
+                            <div class="stat-label">Cours disponibles</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">50+</div>
+                            <div class="stat-label">Experts formateurs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="section features">
+                <div class="container">
+                    <h2 class="section-title">Pourquoi choisir Digital Learning?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="feature-title">Experts du Secteur</h3>
+                            <p class="feature-description">Apprenez auprès de professionnels expérimentés en IA et informatique.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="feature-title">Pratique Intensive</h3>
+                            <p class="feature-description">Des projets concrets pour mettre en pratique vos connaissances.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="feature-title">Communauté Active</h3>
+                            <p class="feature-description">Échangez et collaborez avec d'autres apprenants passionnés.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="feature-title">Carrière</h3>
+                            <p class="feature-description">Préparez-vous aux métiers de l'IA et de l'informatique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Page -->
+        <section id="courses" class="page">
+            <div class="section">
+                <div class="container">
+                    <h2 class="section-title">Tous nos cours</h2>
+                    <p class="section-subtitle">Découvrez notre catalogue complet de cours en IA et informatique</p>
+                    <div class="courses-grid" id="all-courses">
+                        <!-- Courses will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Page -->
+        <section id="categories" class="page">
+            <div class="section">
+                <div class="container">
+                    <h2 class="section-title">Nos Catégories</h2>
+                    <p class="section-subtitle">Explorez nos domaines de spécialisation</p>
+                    <div class="categories-grid">
+                        <div class="category-card ai" onclick="filterCourses('ai')">
+                            <div class="category-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="category-title">Intelligence Artificielle</h3>
+                            <p class="category-count">Machine Learning, Deep Learning, NLP, Computer Vision</p>
+                        </div>
+                        <div class="category-card dev" onclick="filterCourses('dev')">
+                            <div class="category-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="category-title">Développement</h3>
+                            <p class="category-count">Web, Mobile, DevOps, Cloud, Architecture</p>
+                        </div>
+                        <div class="category-card data" onclick="filterCourses('data')">
+                            <div class="category-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3 class="category-title">Data Science</h3>
+                            <p class="category-count">Analyse de données, Big Data, Visualisation, MLops</p>
+                        </div>
+                        <div class="category-card cyber" onclick="filterCourses('cyber')">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="category-title">Cybersécurité</h3>
+                            <p class="category-count">Sécurité réseau, Ethical Hacking, Cryptographie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Page -->
+        <section id="admin" class="page">
+            <div class="section">
+                <div class="container">
+                    <div class="admin-panel">
+                        <div class="admin-header">
+                            <h2 class="admin-title">Créer un Cours</h2>
+                            <div class="admin-actions">
+                                <button class="btn btn-primary" id="add-course-btn">
+                                    <i class="fas fa-plus"></i> Nouveau cours
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Course Form -->
+                        <form id="course-form" style="display: none;">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label" for="course-title">Titre du cours</label>
+                                    <input type="text" class="form-control" id="course-title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="course-instructor">Instructeur</label>
+                                    <input type="text" class="form-control" id="course-instructor" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="course-category">Catégorie</label>
+                                    <select class="form-control" id="course-category" required>
+                                        <option value="">Sélectionnez une catégorie</option>
+                                        <option value="ai">Intelligence Artificielle</option>
+                                        <option value="dev">Développement</option>
+                                        <option value="data">Data Science</option>
+                                        <option value="cyber">Cybersécurité</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="course-rating">Note</label>
+                                    <input type="number" class="form-control" id="course-rating" min="0" max="5" step="0.1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="course-students">Nombre d'étudiants</label>
+                                    <input type="number" class="form-control" id="course-students" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="course-icon">Icône</label>
+                                    <select class="form-control" id="course-icon" required>
+                                        <option value="fas fa-robot">Robot IA</option>
+                                        <option value="fas fa-brain">Cerveau</option>
+                                        <option value="fas fa-code">Code</option>
+                                        <option value="fas fa-eye">Vision</option>
+                                        <option value="fas fa-language">Langue</option>
+                                        <option value="fas fa-chart-line">Graphique</option>
+                                        <option value="fas fa-shield-alt">Sécurité</option>
+                                        <option value="fas fa-network-wired">Réseau</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="course-description">Description</label>
+                                <textarea class="form-control" id="course-description" rows="4" placeholder="Décrivez le contenu et les objectifs du cours..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success" id="save-course-btn">Publier le cours</button>
+                                <button type="button" class="btn btn-outline" id="cancel-course-btn">Annuler</button>
+                            </div>
+                        </form>
+
+                        <!-- Courses Table -->
+                        <div class="courses-list" id="courses-list">
+                            <h3 style="margin-bottom: 20px;">Mes cours publiés</h3>
+                            <table class="courses-table">
+                                <thead>
+                                    <tr>
+                                        <th>Titre</th>
+                                        <th>Catégorie</th>
+                                        <th>Étudiants</th>
+                                        <th>Note</th>
+                                        <th>Statut</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-courses-list">
+                                    <!-- Courses will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section id="dashboard" class="page">
+            <div class="section">
+                <div class="container">
+                    <h2 class="section-title">Tableau de bord</h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">Cours suivis</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">12h</div>
+                            <div class="stat-label">Temps d'apprentissage</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">Progression moyenne</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Certificats</div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-courses">
+                        <h3 style="margin-bottom: 20px;">Mes cours en cours</h3>
+                        <div class="courses-grid" id="my-courses">
+                            <!-- User courses will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="section">
+                <div class="container">
+                    <h2 class="section-title">À propos de Digital Learning</h2>
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <p style="margin-bottom: 20px; font-size: 1.1rem;">
+                            Digital Learning est la plateforme leader en France pour l'apprentissage de l'intelligence artificielle et de l'informatique.
+                            Notre mission est de démocratiser l'accès à l'éducation technologique et de former la prochaine génération de professionnels
+                            dans ces domaines en pleine expansion.
+                        </p>
+                        <p style="margin-bottom: 20px; font-size: 1.1rem;">
+                            Fondée en 2025 par une équipe d'experts en IA et en pédagogie, notre plateforme propose des cours de qualité,
+                            des projets pratiques et une communauté active pour soutenir votre apprentissage.
+                        </p>
+                        
+                        <h3 style="margin: 40px 0 20px;">Notre équipe</h3>
+                        <div class="courses-grid">
+                            <div class="feature-card">
+                                <div class="user-avatar" style="margin: 0 auto 15px; width: 80px; height: 80px; font-size: 1.5rem;">AB</div>
+                                <h3 class="feature-title">ABDOUL Bassit</h3>
+                                <p class="feature-description">Chercheur en IA chez Google</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="user-avatar" style="margin: 0 auto 15px; width: 80px; height: 80px; font-size: 1.5rem;">MS</div>
+                                <h3 class="feature-title">Mr Souvé</h3>
+                                <p class="feature-description">Responsable Pédagogique, PhD en Machine Learning</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="user-avatar" style="margin: 0 auto 15px; width: 80px; height: 80px; font-size: 1.5rem;">CO</div>
+                                <h3 class="feature-title">Christie OBEY</h3>
+                                <p class="feature-description">Lead Developer, spécialiste en Deep Learning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page">
+            <div class="section">
+                <div class="container">
+                    <div class="auth-container">
+                        <div class="auth-form">
+                            <h2 class="form-title">Connexion</h2>
+                            <form id="login-form">
+                                <div class="form-group">
+                                    <label class="form-label" for="login-email">Adresse email</label>
+                                    <input type="email" class="form-control" id="login-email" placeholder="votre@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="login-password">Mot de passe</label>
+                                    <input type="password" class="form-control" id="login-password" placeholder="Votre mot de passe" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">Se connecter</button>
+                            </form>
+                            <p class="form-text">
+                                Pas encore de compte ? <a href="#" class="form-link" id="go-to-register">S'inscrire</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Register Page -->
+        <section id="register" class="page">
+            <div class="section">
+                <div class="container">
+                    <div class="auth-container">
+                        <div class="auth-form">
+                            <h2 class="form-title">Inscription</h2>
+                            <form id="register-form">
+                                <div class="form-group">
+                                    <label class="form-label" for="register-name">Nom complet</label>
+                                    <input type="text" class="form-control" id="register-name" placeholder="Votre nom complet" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="register-email">Adresse email</label>
+                                    <input type="email" class="form-control" id="register-email" placeholder="votre@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="register-password">Mot de passe</label>
+                                    <input type="password" class="form-control" id="register-password" placeholder="Créez un mot de passe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="register-confirm">Confirmer le mot de passe</label>
+                                    <input type="password" class="form-control" id="register-confirm" placeholder="Confirmez votre mot de passe" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="width: 100%;">S'inscrire</button>
+                            </form>
+                            <p class="form-text">
+                                Déjà un compte ? <a href="#" class="form-link" id="go-to-login">Se connecter</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AI Academy</h3>
+                    <p style="color: #d1d5db; margin-bottom: 20px;">Plateforme leader d'apprentissage en intelligence artificielle et informatique.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="home">Accueil</a></li>
+                        <li><a href="#" data-page="courses">Cours</a></li>
+                        <li><a href="#" data-page="categories">Catégories</a></li>
+                        <li><a href="#" data-page="admin">Enseigner</a></li>
+                        <li><a href="#" data-page="about">À propos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Catégories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="courses">Intelligence Artificielle</a></li>
+                        <li><a href="#" data-page="courses">Développement</a></li>
+                        <li><a href="#" data-page="courses">Data Science</a></li>
+                        <li><a href="#" data-page="courses">Cybersécurité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li>digitallearning@gmail.com</li>
+                        <li>+229 01 46 27 81 70</li>
+                        <li>Porto-Novo, BENIN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Digital Learning. Tous droits réservés.</p>
+                <p>Site développé par Mr Bassit ALABI</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <div class="chat-title">Assistant AI Academy</div>
+                <button class="chat-close" id="chat-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message received">
+                    <div class="message-sender">Assistant</div>
+                    Bonjour ! Je suis l'assistant AI Academy. Comment puis-je vous aider dans votre apprentissage ?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Posez votre question...">
+                <button class="chat-send" id="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Confirmer la suppression</h3>
+                <button class="modal-close" id="close-delete-modal">&times;</button>
+            </div>
+            <p>Êtes-vous sûr de vouloir supprimer ce cours ? Cette action est irréversible.</p>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button class="btn btn-danger" id="confirm-delete">Supprimer</button>
+                <button class="btn btn-outline" id="cancel-delete">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Externe -->
+    <script src="script.js"></script>
+</body>
+</html>
